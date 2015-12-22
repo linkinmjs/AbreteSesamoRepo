@@ -1,0 +1,9 @@
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\bin\Debug\AbreteSesamo.exe.config
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\bin\Debug\AbreteSesamo.exe
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\bin\Debug\AbreteSesamo.pdb
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.csprojResolveAssemblyReference.cache
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.frmInicio.resources
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.Properties.Resources.resources
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.csproj.GenerateResource.Cache
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.exe
+C:\Users\Mauricio\Desktop\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.pdb
