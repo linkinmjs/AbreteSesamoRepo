@@ -8,38 +8,41 @@ namespace AbreteSesamo
 {
     class Item
     {
-        private int _id, _cantidad, _precio;
-        private string _nombre;
+        private int _id;
+        private String _nombre;
+        private int _precio;
+        private int _cantidad;
 
+        #region Properties
         public int id
         {
             set { this._id = value; }
             get { return this._id; }
         }
-        public int cantidad
-        {
-            set { this._cantidad = value; }
-            get { return this._cantidad; }
-        }
-        public int precio
-        {
-            set { this._precio = value; }
-            get { return this._precio; }
-        }
-        public string nombre
+
+        public String nombre
         {
             set { this._nombre = value; }
             get { return this._nombre; }
         }
 
-        //propiedad para formatear la forma en que se visualizan las cosas por pantalla
+        public int precio
+        {
+            set { this._precio = value; }
+            get { return this._precio; }
+        }
 
-        public string render
+        public int cantidad
+        {
+            set { this._cantidad = value; }
+            get { return this._cantidad; }
+        }
+
+        // Propiedad para formatear la forma en que se muestra el item por pantalla
+        public String render
         {
             get { return this.nombre + " x" + this.cantidad; }
         }
-
-
-
+        #endregion
     }
 }

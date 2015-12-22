@@ -72,7 +72,7 @@ namespace AbreteSesamo
             //categoria 0 = actividades / 1 = insumo
             DataTable dt = new DataTable();
             conectar();
-            comando.CommandText = "select DES_Item from ITEMS where ID_Categoria = " + categoria;
+            comando.CommandText = "select ID_Item, DES_Item, Precio from ITEMS where ID_Categoria = " + categoria;
             dt.Load(comando.ExecuteReader());
 
             return dt;
