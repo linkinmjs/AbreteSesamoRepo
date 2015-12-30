@@ -11,40 +11,40 @@ namespace AbreteSesamo
 {
     class AccesoDatos
     {
-        private OleDbCommand comando;
-        private OleDbDataReader dr;
-        private string cadenaConexion; //= "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = c:\\AbreteSesamo.mdb; User Id = admin; Password =;";
-        private OleDbConnection conexion;
-        private DataTable dt;
+        private OleDbCommand _comando;
+        private OleDbDataReader _dr;
+        private string _cadenaConexion; //= "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = c:\\AbreteSesamo.mdb; User Id = admin; Password =;";
+        private OleDbConnection _conexion;
+        private DataTable _dt;
 
-        public DataTable pDt
+        public DataTable dt
         {
-            set { dt = value; }
-            get { return dt; }
+            set { _dt = value; }
+            get { return _dt; }
         }
 
-        public OleDbCommand pComando
+        public OleDbCommand comando
         {
-            set { comando = value; }
-            get { return comando; }
+            set { _comando = value; }
+            get { return _comando; }
         }
 
-        public OleDbDataReader pDr
+        public OleDbDataReader dr
         {
-            set { dr = value; }
-            get { return dr; }
+            set { _dr = value; }
+            get { return _dr; }
         }
 
-        public string pCadenaConexion
+        public string cadenaConexion
         {
-            set { cadenaConexion = value; }
-            get { return cadenaConexion; }
+            set { _cadenaConexion = value; }
+            get { return _cadenaConexion; }
         }
 
-        public OleDbConnection pConexion
+        public OleDbConnection conexion
         {
-            set { conexion = value; }
-            get { return conexion; }
+            set { _conexion = value; }
+            get { return _conexion; }
         }
 
 
@@ -67,12 +67,11 @@ namespace AbreteSesamo
             conexion.Close();
         }
 
-        public DataTable llenarListas(string categoria)
+        public DataTable llenarListas()
         {
-            //categoria 0 = actividades / 1 = insumo
             DataTable dt = new DataTable();
             conectar();
-            comando.CommandText = "select ID_Item, DES_Item, Precio from ITEMS where ID_Categoria = " + categoria;
+            comando.CommandText = "select ID_Item, DES_Item, Precio, ID_Categoria from ITEMS";
             dt.Load(comando.ExecuteReader());
 
             return dt;
@@ -80,8 +79,6 @@ namespace AbreteSesamo
 
         public DataTable obtenerMonto(string nombreItem)
         {
-
-
             DataTable dt = new DataTable();
             conectar();
             comando.CommandText = "select Precio from ITEMS where DES_Item = " + nombreItem;

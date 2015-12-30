@@ -10,8 +10,9 @@ namespace AbreteSesamo
     {
         private int _id;
         private String _nombre;
-        private int _precio;
+        private int _precio = 0;
         private int _cantidad;
+        private int _categoria;
 
         #region Properties
         public int id
@@ -37,12 +38,33 @@ namespace AbreteSesamo
             set { this._cantidad = value; }
             get { return this._cantidad; }
         }
+        public int categoria
+        {
+            set { this._categoria = value; }
+            get { return this._categoria; }
+        }
+
+
+
+        public Item Copy()
+        {
+            return (Item)this.MemberwiseClone();
+        }
+
+        
 
         // Propiedad para formatear la forma en que se muestra el item por pantalla
-        public String render
+        public string render
         {
-            get { return this.nombre + " x" + this.cantidad; }
+            get
+            {
+                return this.nombre + " x" + this.cantidad;
+
+            }
+
         }
+
         #endregion
+
     }
 }
