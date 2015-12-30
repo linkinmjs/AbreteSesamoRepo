@@ -64,6 +64,15 @@ namespace AbreteSesamo
 
         }
 
+        public string renderCategoria
+        {
+            get
+            {
+                return this.categoria == 0 ? "Trabajo" : "Insumo";
+
+            }
+
+        }
         #endregion
 
     }

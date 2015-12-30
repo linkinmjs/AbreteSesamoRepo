@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\De
 C:\Users\Mauricio\Documents\GitHub\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.csproj.GenerateResource.Cache
 C:\Users\Mauricio\Documents\GitHub\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.exe
 C:\Users\Mauricio\Documents\GitHub\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.pdb
+C:\Users\Mauricio\Documents\GitHub\AbreteSesamo\AbreteSesamo\AbreteSesamo\obj\Debug\AbreteSesamo.Form2.resources

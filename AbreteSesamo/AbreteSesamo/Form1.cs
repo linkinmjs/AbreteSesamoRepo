@@ -11,6 +11,8 @@ namespace AbreteSesamo
     {
         private BindingList<Item> itemsCargados = new BindingList<Item>();
         private Factura factura;
+        
+        public static frmInicio form1;
 
         private void lstFactura_ListChanged(Object sender, EventArgs e)
         {
@@ -42,6 +44,8 @@ namespace AbreteSesamo
             lstFactura.DataSource = this.factura.items;
             lstFactura.DisplayMember = "render";
             lstFactura.ValueMember = "id";
+
+            form1 = this;
 
         }
 
@@ -131,6 +135,13 @@ namespace AbreteSesamo
             {
                 txtMonto.ReadOnly = true;
             }
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.Show();
         }
 
 
