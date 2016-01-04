@@ -26,6 +26,22 @@ namespace AbreteSesamo
             dataGridView1.DataSource = itemsCargados;
 
 
+            //"columnaTipo" es del tipo AbreteSesamo.Form2.Categoria
+            Type columnaTipo = typeof(Categoria);
+            //Obtengo los valores de la enumeracion, como un array
+            Array categorias = Enum.GetValues(columnaTipo);
+            DataGridViewComboBoxColumn columnaCategoria = new DataGridViewComboBoxColumn();
+
+            //defino propiedades de la columna
+            columnaCategoria.DataSource = categorias;
+            columnaCategoria.ValueType = columnaTipo;
+            //vinculo el item seleccionado del combobox a la propiedad "Categoria" de cada item vinculado
+            columnaCategoria.DataPropertyName = "categoria";
+            columnaCategoria.HeaderText = "Categoria";
+
+            dataGridView1.Columns.Add(columnaCategoria);
+
+
             // Con este For llena la lista lstActividades con los items 
             for (int i = 0; i < (dt.Rows.Count); i++)
             {
@@ -33,7 +49,8 @@ namespace AbreteSesamo
                 Item item = new Item();
                 item.nombre = row.Field<String>("DES_Item");
                 item.id = row.Field<int>("ID_Item");
-                item.categoria = row.Field<int>("ID_Categoria");
+                item.categoria = row.Field<Categoria>("ID_Categoria");
+
 
                 if (Convert.IsDBNull(row[2]))
                 {
@@ -44,28 +61,23 @@ namespace AbreteSesamo
                 {
                     item.precio = Convert.ToInt32(row[2]);
                 }
+
+
                 itemsCargados.Add(item);
-                dataGridView1.Rows[1] = item.categoria;
 
-
-                
-                            
             }
 
         }
 
         private void btnVolverForm1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmInicio.form1.Show();
-            //MessageBox.Show(dataGridView1.Rows[0].Cells[1].Value.ToString());
+            this.Close();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
-
 
 
     }

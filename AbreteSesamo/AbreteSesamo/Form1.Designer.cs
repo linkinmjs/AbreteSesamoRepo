@@ -32,15 +32,13 @@
             this.lstFactura = new System.Windows.Forms.ListBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.txtMontoTotal = new System.Windows.Forms.TextBox();
             this.lblMonto = new System.Windows.Forms.Label();
             this.btnReportes = new System.Windows.Forms.Button();
             this.gpbActividades = new System.Windows.Forms.GroupBox();
-            this.btnAñadir = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnQuitarTodo = new System.Windows.Forms.Button();
             this.gpbFactura = new System.Windows.Forms.GroupBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
@@ -94,16 +92,6 @@
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(143, 441);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(131, 34);
-            this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(373, 76);
@@ -151,10 +139,8 @@
             // 
             // gpbActividades
             // 
-            this.gpbActividades.Controls.Add(this.btnAñadir);
-            this.gpbActividades.Controls.Add(this.btnEliminar);
-            this.gpbActividades.Controls.Add(this.lstActividades);
             this.gpbActividades.Controls.Add(this.btnEditar);
+            this.gpbActividades.Controls.Add(this.lstActividades);
             this.gpbActividades.Location = new System.Drawing.Point(12, 15);
             this.gpbActividades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpbActividades.Name = "gpbActividades";
@@ -164,26 +150,16 @@
             this.gpbActividades.TabStop = false;
             this.gpbActividades.Text = "Actividades";
             // 
-            // btnAñadir
+            // btnEditar
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(5, 401);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(268, 34);
-            this.btnAñadir.TabIndex = 6;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = true;
-            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(5, 441);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(131, 34);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(5, 401);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(268, 34);
+            this.btnEditar.TabIndex = 6;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnQuitarTodo
             // 
@@ -274,15 +250,13 @@
         private System.Windows.Forms.ListBox lstFactura;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnQuitar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.TextBox txtMontoTotal;
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.GroupBox gpbActividades;
-        private System.Windows.Forms.Button btnAñadir;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnQuitarTodo;
         private System.Windows.Forms.GroupBox gpbFactura;
         private System.Windows.Forms.Button btnConfirmar;

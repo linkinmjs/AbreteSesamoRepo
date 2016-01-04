@@ -11,8 +11,6 @@ namespace AbreteSesamo
     {
         private BindingList<Item> itemsCargados = new BindingList<Item>();
         private Factura factura;
-        
-        public static frmInicio form1;
 
         private void lstFactura_ListChanged(Object sender, EventArgs e)
         {
@@ -44,15 +42,15 @@ namespace AbreteSesamo
             lstFactura.DataSource = this.factura.items;
             lstFactura.DisplayMember = "render";
             lstFactura.ValueMember = "id";
-
-            form1 = this;
-
         }
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
             AccesoDatos accesoDatos = new AccesoDatos("Provider = Microsoft.Jet.OLEDB.4.0; Data Source = c:\\AbreteSesamo.mdb; User Id = admin; Password =;");
             DataTable dt = accesoDatos.llenarListas();
+
+            this.FormClosing += new FormClosingEventHandler(Form1_OnClosing);
+
 
             lstActividades.DataSource = itemsCargados;
             lstActividades.DisplayMember = "nombre";
@@ -65,7 +63,7 @@ namespace AbreteSesamo
                 Item item = new Item();
                 item.nombre = row.Field<String>("DES_Item");
                 item.id = row.Field<int>("ID_Item");
-                item.categoria = row.Field<int>("ID_Categoria");
+                item.categoria = row.Field<Categoria>("ID_Categoria");
 
                 if (Convert.IsDBNull(row[2]))
                 {
@@ -79,6 +77,26 @@ namespace AbreteSesamo
                 itemsCargados.Add(item);
             }
         }
+
+        //EVENTO CERRAR PROGRAMA
+        private void Form1_OnClosing(object sender, CancelEventArgs e)
+        {
+            Boolean cancelar = false;
+
+            if (Application.OpenForms.Count == 1)
+            {
+                DialogResult result = MessageBox.Show("¿Salir de la aplicación?", "Cerrando aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                cancelar = result == DialogResult.No;
+            }
+            else
+            {
+                cancelar = true;
+            }
+
+            e.Cancel = cancelar;
+        }
+
+
 
         //BOTON AGREGAR
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -137,11 +155,11 @@ namespace AbreteSesamo
             }
         }
 
-        private void btnAñadir_Click(object sender, EventArgs e)
+        //BOTON EDITAR
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.Show();
+            Form2 form2 = new Form2();
+            form2.ShowDialog(this);
         }
 
 
@@ -151,9 +169,5 @@ namespace AbreteSesamo
         //    destino.Add(item);
         //    origen.Remove(item);
         //}
-
-
-
-
     }
 }

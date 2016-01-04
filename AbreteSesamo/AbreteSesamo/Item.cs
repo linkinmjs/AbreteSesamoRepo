@@ -12,7 +12,7 @@ namespace AbreteSesamo
         private String _nombre;
         private int _precio = 0;
         private int _cantidad;
-        private int _categoria;
+        private Categoria _categoria;
 
         #region Properties
         public int id
@@ -38,7 +38,7 @@ namespace AbreteSesamo
             set { this._cantidad = value; }
             get { return this._cantidad; }
         }
-        public int categoria
+        public Categoria categoria
         {
             set { this._categoria = value; }
             get { return this._categoria; }

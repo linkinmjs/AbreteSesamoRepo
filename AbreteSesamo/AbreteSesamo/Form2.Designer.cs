@@ -31,7 +31,6 @@
             this.btnVolverForm1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -48,15 +47,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
-            this.categoria,
             this.precio});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(664, 301);
+            this.dataGridView1.Size = new System.Drawing.Size(688, 439);
             this.dataGridView1.TabIndex = 1;
             // 
             // nombre
@@ -64,16 +64,6 @@
             this.nombre.DataPropertyName = "nombre";
             this.nombre.HeaderText = "Descripcion";
             this.nombre.Name = "nombre";
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Items.AddRange(new object[] {
-            "Trabajo",
-            "Insumo"});
-            this.categoria.Name = "categoria";
-            this.categoria.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.categoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // precio
             // 
@@ -100,7 +90,6 @@
         private System.Windows.Forms.Button btnVolverForm1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewComboBoxColumn categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
     }
 }
